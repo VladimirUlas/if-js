@@ -18,6 +18,7 @@ console.log(test - 1);
 const arr = [2, 3, 5, 8];
 let result = 1;
 for (let i = 0; i < arr.length; i += 1) {
+    result *= arr[i];
 }
 console.log(result);
 const arr2 = [2, 5, 8, 15, 0, 6, 20, 3];
