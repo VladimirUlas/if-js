@@ -7,12 +7,12 @@ function colorChange() {
   let click = 0;
   return function (event) {
     click += 1;
-    const paragraf = event.target;
-    paragraf.style.color = colors[click - 1];
+    const paragraph = event.target;
+    paragraph.style.color = colors[click - 1];
     if (click > colors.lenght - 1) {
       click = 0;
     }
-  };
+  }
 }
 
 para1.addEventListener('click', colorChange());
