@@ -9,7 +9,7 @@ function colorChange() {
     click += 1;
     const paragraph = event.target;
     paragraph.style.color = colors[click - 1];
-    if (click > colors.lenght - 1) {
+    if (click > colors.length - 1) {
       click = 0;
     }
   }
