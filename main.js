@@ -1,38 +1,61 @@
-let user = 'John Doe';
-console.log(user);
+const data = [
+  {
+    country: 'Russia',
+    city: 'Saint Petersburg',
+    hotel: 'Hotel Leopold',
+  },
+  {
+    country: 'Spain',
+    city: 'Santa Cruz de Tenerife',
+    hotel: 'Apartment Sunshine',
+  },
+  {
+    country: 'Slowakia',
+    city: 'Vysokie Tatry',
+    hotel: 'Villa Kunerad',
+  },
+  {
+    country: 'Germany',
+    city: 'Berlin',
+    hotel: 'Hostel Friendship',
+  },
+  {
+    country: 'Indonesia',
+    city: 'Bali',
+    hotel: 'Ubud Bali Resort&SPA',
+  },
+  {
+    country: 'Netherlands',
+    city: 'Rotterdam',
+    hotel: 'King Kong Hostel',
+  },
+  {
+    country: 'Marocco',
+    city: 'Ourika',
+    hotel: 'Rokoko Hotel',
+  },
+  {
+    country: 'Germany',
+    city: 'Berlin',
+    hotel: 'Hotel Rehberge Berlin Mitte',
+  },
+];
 
-const student = 'Vladimir';
-console.log(student);
+const prepareStringForSearch = (str, strToCompare) => str.toLocaleLowerCase().replaceAll(' ', '').includes(strToCompare);
 
-user = student;
-console.log(user);
-// In user name Vladimir
-let test = 1
-console.log(test);
-console.log(++test);
-console.log('1' + test);
-//12
-console.log(test);
-console.log(test - 1);
-// data array
-const arr = [2, 3, 5, 8];
-let result = 1;
-for (let i = 0; i < arr.length; i += 1) {
-    result *= arr[i];
-}
-console.log(result);
-const arr2 = [2, 5, 8, 15, 0, 6, 20, 3];
-for (let i = 0; i < arr2.length; i++) {
-    if (arr2[i] > 5 && arr2[i] < 10) {
-        console.log(arr2[i]);
+function search(searchRequest) {
+  const result = [];
+  const searchStringLowerCase = searchRequest.replaceAll(' ', '').toLowerCase();
+  for (let index = 0; index < data.length; index++) {
+    const { country, city, hotel } = data[index];
+    const concatedString = `${country}${city}${hotel}`;
+
+    if (prepareStringForSearch(concatedString, searchStringLowerCase)) {
+      result.push(`${country}, ${city}, {hotel}`);
     }
-}
-const arr3 = [2, 5, 8, 15, 0, 6, 20, 3];
-let z = 0;
-for (let i = 0; i < arr3.length; i++) {
-    z = arr3[i] % 2;
-    if (z === 0) {
-        console.log(arr3[i]);
-    }
+  }
+
+  return result;
 }
 
+console.log(search('Germany Ber'));
