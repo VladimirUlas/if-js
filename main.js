@@ -46,7 +46,7 @@ const prepareStringForSearch = (str, strToCompare) => str.toLocaleLowerCase().re
 function search(searchRequest) {
   const result = [];
   const searchStringLowerCase = searchRequest.replaceAll(' ', '').toLowerCase();
-  for (let index = 0; index < data.length; index++) {
+  for (let index = 0; index < data.length; index += 1) {
     const { country, city, hotel } = data[index];
     const concatedString = `${country}${city}${hotel}`;
 
@@ -59,3 +59,8 @@ function search(searchRequest) {
 }
 
 console.log(search('Germany Ber'));
+
+const Data = '2020-11-26';
+const arrayOfMatches = Data.replace(/2020-11-26/, '26.11.2020');
+
+console.log(arrayOfMatches);
