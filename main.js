@@ -51,7 +51,7 @@ function search(searchRequest) {
     const concatedString = `${country}${city}${hotel}`;
 
     if (prepareStringForSearch(concatedString, searchStringLowerCase)) {
-      result.push(`${country}, ${city}, {hotel}`);
+      result.push(`${country}, ${city}, ${hotel}`);
     }
   }
 
@@ -60,7 +60,12 @@ function search(searchRequest) {
 
 console.log(search('Germany Ber'));
 
-const Data = '2020-11-26';
-const arrayOfMatches = Data.replace(/2020-11-26/, '26.11.2020');
+const date = '2020-11-26';
+const splitDate = date.split('-');
+const reverseDate = splitDate.reverse();
+const joinDate = reverseDate.join('.');
 
-console.log(arrayOfMatches);
+console.log(joinDate);
+
+const newDate = date.split('-').reverse().join('.');
+console.log(newDate);
