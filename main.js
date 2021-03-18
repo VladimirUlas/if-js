@@ -173,15 +173,15 @@ function searchHotels(searchWord) {
 searchHotels('south');
 
 function searchCountry() {
-  return hotels.reduce((accamulator, currentValue) => {
+  return hotels.reduce((accumulator, currentValue) => {
     const resultSearch = [];
     if (!accumulator[currentValue.country]) {
       resultSearch.push(currentValue.city);
       accumulator[currentValue.country] = resultSearch;
-    } else if (!accamulator[currentValue.country].includes(currentValue.city)) {
-      accamulator[currentValue.country].push(currentValue.city);
+    } else if (!accumulator[currentValue.country].includes(currentValue.city)) {
+      accumulator[currentValue.country].push(currentValue.city);
     }
-    return accamulator;
+    return accumulator;
   }, {});
 }
 
