@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 const obj1 = {
   a: 'a',
   b: {
@@ -41,10 +42,11 @@ const deepEqual = (ObjectOne, objectTwo) => {
   const objectTwoKeys = Object.keys(objectTwo);
   if (objectOneKeys.length !== objectTwoKeys.length) return false;
   for (const key of objectOneKeys) {
-    if (!objectTwoKeys.includes(key) || deepEqual(ObjectOne[key], objectTwo[key])) return false;
+    if (!objectTwoKeys.includes(key) || deepEqual(ObjectOne[key], objectTwo[key])) return true;
   }
-  return true;
+  return false;
 };
 
 console.log(deepEqual(obj1, obj2));
 console.log(deepEqual(obj1, obj3));
+
