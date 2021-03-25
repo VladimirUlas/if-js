@@ -46,7 +46,5 @@ const deepEqual = (ObjectOne, objectTwo) => {
   }
   return false;
 };
-
 console.log(deepEqual(obj1, obj2));
 console.log(deepEqual(obj1, obj3));
-
