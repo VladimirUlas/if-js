@@ -13,5 +13,7 @@ module.exports = {
   },
   rules: {
     'linebreak-style': 0,
+    'no-console': 'off',
+    'max-classes-per-file': 'off',
   },
 };
