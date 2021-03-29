@@ -15,5 +15,6 @@ module.exports = {
     'linebreak-style': 0,
     'no-console': 'off',
     'max-classes-per-file': 'off',
+    'eslint-disable-next-line no-restricted-syntax': 'off',
   },
 };
