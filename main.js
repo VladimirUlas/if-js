@@ -1,4 +1,3 @@
-/* eslint-disable no-restricted-syntax */
 const obj1 = {
   a: 'a',
   b: {
